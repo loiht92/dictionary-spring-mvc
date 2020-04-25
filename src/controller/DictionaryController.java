@@ -21,10 +21,25 @@ public class DictionaryController {
         list.put("Cat", "Con mèo");
         list.put("Red", "Màu đỏ");
         list.put("How Are You", "Bạn có khoẻ không");
+
         String vietnamWord = list.get(englishWord);
 
+//        if (vietnamWord != null){
+//            model.addAttribute("englishWord", englishWord);
+//            model.addAttribute("vietnamWord", vietnamWord);
+//        }else {
+//            vietnamWord = "Not Found";
+//            model.addAttribute("englishWord", englishWord);
+//            model.addAttribute("vietnamWord", vietnamWord);
+//        }
+//        return "translate";
+
+        if (vietnamWord == null){
+            vietnamWord = "Not Found";
+        }
         model.addAttribute("englishWord", englishWord);
         model.addAttribute("vietnamWord", vietnamWord);
         return "translate";
     }
+
 }
